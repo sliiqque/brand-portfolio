@@ -2,7 +2,6 @@
 
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/Button";
-import { Card } from "@/components/ui/Card";
 import { Mail, MessageSquare, Calendar, ArrowRight } from "lucide-react";
 
 export default function ContactPage() {

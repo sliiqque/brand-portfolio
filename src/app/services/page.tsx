@@ -1,11 +1,10 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Services } from "@/components/sections/Services";
-import { SignatureOffer } from "@/components/sections/SignatureOffer";
-import { FinalCTA } from "@/components/sections/FinalCTA";
-import { Card } from "@/components/ui/Card";
 import { CheckCircle2 } from "lucide-react";
+import { Services } from "@/components/sections/Services";
+import { FinalCTA } from "@/components/sections/FinalCTA";
+import { SignatureOffer } from "@/components/sections/SignatureOffer";
 
 export default function ServicesPage() {
   return (
