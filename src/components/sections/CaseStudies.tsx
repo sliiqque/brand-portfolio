@@ -2,7 +2,7 @@
 
 import { motion } from "framer-motion";
 import { Badge } from "@/components/ui/Badge";
-import { ArrowUpRight, Linkedin } from "lucide-react";
+import { ArrowUpRight, Linkedin, Github } from "lucide-react";
 import Link from "next/link";
 
 const projects = [
@@ -124,7 +124,14 @@ export function CaseStudies() {
                           rel="noopener noreferrer"
                           className="p-3 rounded-full bg-white/5 hover:bg-white/10 transition-colors"
                         >
-                          <Linkedin size={20} className="text-foreground/60" />
+                          {project.title === "BIZEDGE" ? (
+                            <Linkedin
+                              size={20}
+                              className="text-foreground/60"
+                            />
+                          ) : (
+                            <Github size={20} className="text-foreground/60" />
+                          )}
                         </Link>
                         <Link
                           href={project.link}
