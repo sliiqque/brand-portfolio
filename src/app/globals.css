@@ -6,6 +6,7 @@
 
   --color-accent-violet: #7c5cff;
   --color-accent-cyan: #4dfff3;
+  --color-accent-teal: #2898a4;
   --color-card-bg: #161b22;
   --color-border-subtle: rgba(255, 255, 255, 0.08);
 
@@ -17,6 +18,7 @@
 
   --shadow-glow: 0 0 30px rgba(124, 92, 255, 0.2);
   --shadow-glow-cyan: 0 0 30px rgba(77, 255, 243, 0.2);
+  --shadow-glow-teal: 0 0 30px rgba(40, 152, 164, 0.2);
 
   --animate-float: float 6s ease-in-out infinite;
   --animate-pulse-slow: pulse-slow 8s ease-in-out infinite;
