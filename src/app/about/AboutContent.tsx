@@ -24,7 +24,7 @@ export function AboutContent() {
               </h1>
               <div className="space-y-8 text-xl md:text-2xl text-foreground/60 leading-relaxed max-w-2xl font-medium">
                 <p>
-                  I'm SLIIQQUE, a senior Frontend and Web3 Engineer with over 8
+                  I&apos;m SLIIQQUE, a senior Frontend and Web3 Engineer with over 8
                   years of experience building digital products that scale.
                 </p>
                 <p>

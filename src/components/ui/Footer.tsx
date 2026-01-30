@@ -30,9 +30,21 @@ export function Footer() {
             </p>
             <div className="flex space-x-4">
               {[
-                { icon: Github, href: "https://github.com/sliiique", label: "GitHub" },
-                { icon: Twitter, href: "https://twitter.com/sliiique", label: "Twitter" },
-                { icon: Linkedin, href: "https://linkedin.com/in/sliiique", label: "LinkedIn" },
+                {
+                  icon: Github,
+                  href: "https://github.com/sliiqque",
+                  label: "GitHub",
+                },
+                {
+                  icon: Twitter,
+                  href: "https://twitter.com/sliiqque",
+                  label: "Twitter",
+                },
+                {
+                  icon: Linkedin,
+                  href: "https://linkedin.com/in/sliiqque",
+                  label: "LinkedIn",
+                },
               ].map((social, i) => (
                 <Link
                   key={i}

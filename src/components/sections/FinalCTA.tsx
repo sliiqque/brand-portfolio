@@ -58,10 +58,10 @@ export function FinalCTA() {
               </Link>
             </Button>
             <Link
-              href="mailto:hello@sliiique.com"
+              href="mailto:hello@sliiqque.com"
               className="text-foreground/40 hover:text-white transition-all duration-300 font-bold uppercase tracking-widest text-xs py-4 px-8 rounded-full border border-white/5 hover:border-white/20 hover:bg-white/5"
             >
-              hello@sliiique.com
+              hello@sliiqque.com
             </Link>
           </div>
         </motion.div>
