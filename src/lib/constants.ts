@@ -7,6 +7,9 @@ import {
   Mail,
   MessageSquare,
   LucideIcon,
+  Zap,
+  Shield,
+  BarChart3,
 } from "lucide-react";
 
 export interface NavItem {
@@ -53,11 +56,111 @@ export interface ContactMethod {
   textColor: string;
 }
 
+export interface TechStat {
+  label: string;
+  value: string;
+}
+
+export interface ProcessStep {
+  number: string;
+  title: string;
+  description: string;
+}
+
+export interface SignatureFeature {
+  icon: LucideIcon;
+  label: string;
+}
+
+export interface PhilosophyItem {
+  title: string;
+  desc: string;
+  color: string;
+}
+
 export const NAVIGATION: NavItem[] = [
   { name: "Home", href: "/" },
   { name: "Work", href: "/work" },
   { name: "Services", href: "/services" },
   { name: "About", href: "/about" },
+];
+
+export const TECH_STACK = [
+  "Next.js",
+  "React",
+  "TypeScript",
+  "Tailwind CSS",
+  "Solidity",
+  "Ethers.js",
+  "Viem",
+  "The Graph",
+  "Node.js",
+  "PostgreSQL",
+  "Framer Motion",
+  "GraphQL",
+  "Web3.js",
+  "Hardhat",
+  "Foundry",
+  "Rust",
+  "Go",
+  "Docker",
+];
+
+export const TECH_STATS: TechStat[] = [
+  { label: "Years Exp", value: "8+" },
+  { label: "Projects", value: "50+" },
+  { label: "Protocols", value: "5" },
+];
+
+export const PROCESS_STEPS: ProcessStep[] = [
+  {
+    number: "01",
+    title: "Discovery & Strategy",
+    description:
+      "We dive deep into your product goals, user needs, and technical requirements to define a clear roadmap.",
+  },
+  {
+    number: "02",
+    title: "Design & Architecture",
+    description:
+      "Creating high-fidelity interfaces and scalable system architectures that prioritize performance and security.",
+  },
+  {
+    number: "03",
+    title: "Development & Testing",
+    description:
+      "Clean, efficient coding with continuous integration and rigorous testing to ensure a flawless launch.",
+  },
+  {
+    number: "04",
+    title: "Deployment & Scale",
+    description:
+      "Launching your product and providing ongoing support to optimize performance and scale user growth.",
+  },
+];
+
+export const SIGNATURE_FEATURES: SignatureFeature[] = [
+  { icon: Zap, label: "4 Week Delivery" },
+  { icon: Shield, label: "Audit Ready" },
+  { icon: BarChart3, label: "Conversion Focused" },
+];
+
+export const PHILOSOPHY_ITEMS: PhilosophyItem[] = [
+  {
+    title: "Performance First",
+    desc: "Speed is a feature. I optimize every line of code to ensure the fastest possible load times and smooth interactions.",
+    color: "accent-violet",
+  },
+  {
+    title: "User-Centric",
+    desc: "Technology should serve the user. I focus on creating interfaces that are accessible, intuitive, and conversion-focused.",
+    color: "accent-cyan",
+  },
+  {
+    title: "Scalable Systems",
+    desc: "I build with the future in mind, using battle-tested architectures and clean code that can grow with your business.",
+    color: "white",
+  },
 ];
 
 export const PROJECTS: Project[] = [

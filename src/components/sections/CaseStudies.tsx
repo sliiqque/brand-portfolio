@@ -1,10 +1,5 @@
 "use client";
 
-import { motion } from "framer-motion";
-import { Badge } from "@/components/ui/Badge";
-import { ArrowUpRight, Linkedin, Github } from "lucide-react";
-import Link from "next/link";
-
 import { ProjectCard } from "@/components/ui/ProjectCard";
 import { PROJECTS } from "@/lib/constants";
 

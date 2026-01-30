@@ -17,7 +17,7 @@ export function WorkContent() {
           >
             <h1 className="text-5xl md:text-7xl font-bold tracking-tight mb-8">Selected Work</h1>
             <p className="text-xl text-foreground/60 leading-relaxed">
-              A deep dive into the projects I've built, the problems I've solved, and the results I've delivered for Web3 and SaaS companies.
+              A deep dive into the projects I&apos;ve built, the problems I&apos;ve solved, and the results I&apos;ve delivered for Web3 and SaaS companies.
             </p>
           </motion.div>
         </div>
@@ -31,7 +31,7 @@ export function WorkContent() {
             <div>
               <h3 className="text-2xl font-bold mb-4">Other Projects</h3>
               <p className="text-foreground/60 mb-8">
-                I've worked on dozens of other projects ranging from small MVPs to large-scale enterprise applications.
+                I&apos;ve worked on dozens of other projects ranging from small MVPs to large-scale enterprise applications.
               </p>
               <ul className="space-y-4">
                 <li className="flex items-center justify-between py-4 border-b border-border-subtle">

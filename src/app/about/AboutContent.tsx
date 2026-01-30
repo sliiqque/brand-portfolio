@@ -2,6 +2,69 @@
 
 import { motion } from "framer-motion";
 import { FinalCTA } from "@/components/sections/FinalCTA";
+import { PHILOSOPHY_ITEMS } from "@/lib/constants";
+
+interface PhilosophyCardProps {
+  title: string;
+  desc: string;
+  color: string;
+  index: number;
+}
+
+function PhilosophyCard({ title, desc, color, index }: PhilosophyCardProps) {
+  return (
+    <motion.div
+      initial={{ opacity: 0, y: 20 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true }}
+      transition={{ delay: index * 0.1 }}
+    >
+      <div className="bento-card p-10 h-full flex flex-col group hover:-translate-y-2 transition-all duration-500">
+        <div
+          className={`w-12 h-1 bg-${color} mb-8 group-hover:w-20 transition-all duration-500`}
+        />
+        <h3 className="text-3xl font-bold mb-6">{title}</h3>
+        <p className="text-lg text-foreground/60 leading-relaxed font-medium">
+          {desc}
+        </p>
+      </div>
+    </motion.div>
+  );
+}
+
+function FloatingStat({
+  value,
+  label,
+  colorClass,
+  delay = 0,
+  yRange = [0, -20, 0],
+  positionClass,
+}: {
+  value: string;
+  label: string;
+  colorClass: string;
+  delay?: number;
+  yRange?: number[];
+  positionClass: string;
+}) {
+  return (
+    <motion.div
+      animate={{ y: yRange }}
+      transition={{
+        duration: 4 + delay,
+        repeat: Infinity,
+        ease: "easeInOut",
+        delay,
+      }}
+      className={`absolute ${positionClass} p-6 rounded-3xl bg-background/80 backdrop-blur-xl border border-white/10 shadow-2xl`}
+    >
+      <div className={`text-3xl font-black ${colorClass}`}>{value}</div>
+      <div className="text-[10px] font-bold uppercase tracking-widest text-foreground/40">
+        {label}
+      </div>
+    </motion.div>
+  );
+}
 
 export function AboutContent() {
   return (
@@ -24,8 +87,9 @@ export function AboutContent() {
               </h1>
               <div className="space-y-8 text-xl md:text-2xl text-foreground/60 leading-relaxed max-w-2xl font-medium">
                 <p>
-                  I&apos;m SLIIQQUE, a senior Frontend and Web3 Engineer with over 8
-                  years of experience building digital products that scale.
+                  I&apos;m SLIIQQUE, a senior Frontend and Web3 Engineer with
+                  over 8 years of experience building digital products that
+                  scale.
                 </p>
                 <p>
                   My mission is to bridge the gap between complex technology and
@@ -49,39 +113,20 @@ export function AboutContent() {
                   </span>
                 </div>
                 {/* Floating Elements */}
-                <motion.div
-                  animate={{ y: [0, -20, 0] }}
-                  transition={{
-                    duration: 4,
-                    repeat: Infinity,
-                    ease: "easeInOut",
-                  }}
-                  className="absolute top-10 right-10 p-6 rounded-3xl bg-background/80 backdrop-blur-xl border border-white/10 shadow-2xl"
-                >
-                  <div className="text-3xl font-black text-accent-violet">
-                    8+
-                  </div>
-                  <div className="text-[10px] font-bold uppercase tracking-widest text-foreground/40">
-                    Years Exp.
-                  </div>
-                </motion.div>
-                <motion.div
-                  animate={{ y: [0, 20, 0] }}
-                  transition={{
-                    duration: 5,
-                    repeat: Infinity,
-                    ease: "easeInOut",
-                    delay: 1,
-                  }}
-                  className="absolute bottom-10 left-10 p-6 rounded-3xl bg-background/80 backdrop-blur-xl border border-white/10 shadow-2xl"
-                >
-                  <div className="text-3xl font-black text-accent-cyan">
-                    50+
-                  </div>
-                  <div className="text-[10px] font-bold uppercase tracking-widest text-foreground/40">
-                    Projects
-                  </div>
-                </motion.div>
+                <FloatingStat
+                  value="8+"
+                  label="Years Exp."
+                  colorClass="text-accent-violet"
+                  positionClass="top-10 right-10"
+                />
+                <FloatingStat
+                  value="50+"
+                  label="Projects"
+                  colorClass="text-accent-cyan"
+                  delay={1}
+                  yRange={[0, 20, 0]}
+                  positionClass="bottom-10 left-10"
+                />
               </div>
             </motion.div>
           </div>
@@ -104,40 +149,8 @@ export function AboutContent() {
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {[
-              {
-                title: "Performance First",
-                desc: "Speed is a feature. I optimize every line of code to ensure the fastest possible load times and smooth interactions.",
-                color: "accent-violet",
-              },
-              {
-                title: "User-Centric",
-                desc: "Technology should serve the user. I focus on creating interfaces that are accessible, intuitive, and conversion-focused.",
-                color: "accent-cyan",
-              },
-              {
-                title: "Scalable Systems",
-                desc: "I build with the future in mind, using battle-tested architectures and clean code that can grow with your business.",
-                color: "white",
-              },
-            ].map((item, i) => (
-              <motion.div
-                key={i}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: i * 0.1 }}
-              >
-                <div className="bento-card p-10 h-full flex flex-col group hover:-translate-y-2 transition-all duration-500">
-                  <div
-                    className={`w-12 h-1 bg-${item.color} mb-8 group-hover:w-20 transition-all duration-500`}
-                  />
-                  <h3 className="text-3xl font-bold mb-6">{item.title}</h3>
-                  <p className="text-lg text-foreground/60 leading-relaxed font-medium">
-                    {item.desc}
-                  </p>
-                </div>
-              </motion.div>
+            {PHILOSOPHY_ITEMS.map((item, i) => (
+              <PhilosophyCard key={i} index={i} {...item} />
             ))}
           </div>
         </div>

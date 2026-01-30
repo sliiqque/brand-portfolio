@@ -1,33 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-
-const techStack = [
-  "Next.js",
-  "React",
-  "TypeScript",
-  "Tailwind CSS",
-  "Solidity",
-  "Ethers.js",
-  "Viem",
-  "The Graph",
-  "Node.js",
-  "PostgreSQL",
-  "Framer Motion",
-  "GraphQL",
-  "Web3.js",
-  "Hardhat",
-  "Foundry",
-  "Rust",
-  "Go",
-  "Docker",
-];
-
-const stats = [
-  { label: "Years Exp", value: "8+" },
-  { label: "Projects", value: "50+" },
-  { label: "Protocols", value: "5" },
-];
+import { TECH_STACK, TECH_STATS } from "@/lib/constants";
 
 export function TrustIndicators() {
   return (
@@ -40,7 +14,7 @@ export function TrustIndicators() {
               <span className="text-accent-violet">WORLDWIDE</span>
             </h3>
             <div className="flex gap-8">
-              {stats.map((stat) => (
+              {TECH_STATS.map((stat) => (
                 <div key={stat.label}>
                   <div className="text-3xl font-bold text-white mb-1">
                     {stat.value}
@@ -60,7 +34,7 @@ export function TrustIndicators() {
                 transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
                 className="flex flex-nowrap gap-4 whitespace-nowrap"
               >
-                {[...techStack, ...techStack].map((tech, i) => (
+                {[...TECH_STACK, ...TECH_STACK].map((tech, i) => (
                   <div
                     key={`${tech}-${i}`}
                     className="px-6 py-3 rounded-2xl bg-white/5 border border-white/5 text-sm font-medium text-foreground/60 hover:text-accent-cyan hover:border-accent-cyan/30 transition-all cursor-default"

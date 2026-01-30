@@ -1,33 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-
-const steps = [
-  {
-    number: "01",
-    title: "Discovery & Strategy",
-    description:
-      "We dive deep into your product goals, user needs, and technical requirements to define a clear roadmap.",
-  },
-  {
-    number: "02",
-    title: "Design & Architecture",
-    description:
-      "Creating high-fidelity interfaces and scalable system architectures that prioritize performance and security.",
-  },
-  {
-    number: "03",
-    title: "Development & Testing",
-    description:
-      "Clean, efficient coding with continuous integration and rigorous testing to ensure a flawless launch.",
-  },
-  {
-    number: "04",
-    title: "Deployment & Scale",
-    description:
-      "Launching your product and providing ongoing support to optimize performance and scale user growth.",
-  },
-];
+import { PROCESS_STEPS } from "@/lib/constants";
 
 export function Process() {
   return (
@@ -56,7 +30,7 @@ export function Process() {
           </div>
 
           <div className="lg:col-span-7 space-y-24">
-            {steps.map((step, index) => (
+            {PROCESS_STEPS.map((step, index) => (
               <motion.div
                 key={step.number}
                 initial={{ opacity: 0, x: 20 }}
