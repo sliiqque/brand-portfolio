@@ -44,9 +44,9 @@ export function ContactContent() {
                 Get in touch
               </h2>
               <div className="space-y-6">
-                {CONTACT_METHODS.map((item, i) => (
+                {CONTACT_METHODS.map((item) => (
                   <div
-                    key={i}
+                    key={item.id}
                     className="bento-card p-8 flex items-start space-x-6 group hover:border-white/20 transition-all duration-500"
                   >
                     <div

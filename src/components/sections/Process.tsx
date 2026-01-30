@@ -32,7 +32,7 @@ export function Process() {
           <div className="lg:col-span-7 space-y-24">
             {PROCESS_STEPS.map((step, index) => (
               <motion.div
-                key={step.number}
+                key={step.id}
                 initial={{ opacity: 0, x: 20 }}
                 whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: true, margin: "-100px" }}

@@ -31,23 +31,26 @@ export function Footer() {
             <div className="flex space-x-4">
               {[
                 {
+                  id: "social-github",
                   icon: Github,
                   href: "https://github.com/sliiqque",
                   label: "GitHub",
                 },
                 {
+                  id: "social-twitter",
                   icon: Twitter,
                   href: "https://twitter.com/sliiqque",
                   label: "Twitter",
                 },
                 {
+                  id: "social-linkedin",
                   icon: Linkedin,
                   href: "https://linkedin.com/in/sliiqque",
                   label: "LinkedIn",
                 },
-              ].map((social, i) => (
+              ].map((social) => (
                 <Link
-                  key={i}
+                  key={social.id}
                   href={social.href}
                   target="_blank"
                   rel="noopener noreferrer"
@@ -69,7 +72,7 @@ export function Footer() {
             </h4>
             <ul className="space-y-4">
               {NAVIGATION.map((item) => (
-                <li key={item.name}>
+                <li key={item.id}>
                   <Link
                     href={item.href}
                     className="text-foreground/60 hover:text-white transition-colors flex items-center group"
@@ -88,7 +91,7 @@ export function Footer() {
             </h4>
             <ul className="space-y-4">
               {SERVICES.map((service) => (
-                <li key={service.title}>
+                <li key={service.id}>
                   <Link
                     href="/services"
                     className="text-foreground/60 hover:text-white transition-colors flex items-center group"

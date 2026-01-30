@@ -16,7 +16,7 @@ export function CaseStudies() {
 
         <div className="grid grid-cols-1 gap-12">
           {PROJECTS.map((project) => (
-            <ProjectCard key={project.title} project={project} />
+            <ProjectCard key={project.id} project={project} />
           ))}
         </div>
       </div>

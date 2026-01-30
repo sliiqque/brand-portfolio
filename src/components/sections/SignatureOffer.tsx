@@ -79,8 +79,8 @@ export function SignatureOffer() {
               </p>
 
               <div className="flex flex-wrap gap-8 mb-16">
-                {SIGNATURE_FEATURES.map((item, i) => (
-                  <FeatureItem key={i} {...item} />
+                {SIGNATURE_FEATURES.map((item) => (
+                  <FeatureItem key={item.id} {...item} />
                 ))}
               </div>
 

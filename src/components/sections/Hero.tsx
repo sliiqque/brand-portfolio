@@ -22,7 +22,7 @@ export function Hero() {
         <div className="flex whitespace-nowrap animate-marquee">
           {[1, 2, 3, 4].map((i) => (
             <span
-              key={i}
+              key={`hero-marquee-${i}`}
               className="text-[20vw] font-black tracking-tighter mx-8"
             >
               DIGITAL EXCELLENCE • CRAFTING THE FUTURE •

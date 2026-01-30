@@ -19,7 +19,7 @@ export function FinalCTA() {
         <div className="flex whitespace-nowrap animate-marquee">
           {[1, 2, 3, 4].map((i) => (
             <span
-              key={i}
+              key={`cta-marquee-${i}`}
               className="text-[15vw] font-black tracking-tighter mx-8"
             >
               LET&apos;S BUILD THE FUTURE TOGETHER •

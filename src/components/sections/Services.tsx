@@ -36,7 +36,7 @@ export function Services() {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
           {SERVICES.map((service, index) => (
             <motion.div
-              key={service.title}
+              key={service.id}
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}

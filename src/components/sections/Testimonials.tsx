@@ -14,6 +14,12 @@ export function Testimonials() {
   const prev = () =>
     setActive((prev) => (prev - 1 + TESTIMONIALS.length) % TESTIMONIALS.length);
 
+  const glowColors: Record<string, string> = {
+    "accent-violet": "#7c5cff",
+    "accent-cyan": "#4dfff3",
+    white: "#ffffff",
+  };
+
   return (
     <section className="py-32 relative overflow-hidden">
       {/* Dynamic Background Glow */}
@@ -27,11 +33,7 @@ export function Testimonials() {
           className={`absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] rounded-full blur-[160px] opacity-10 -z-10`}
           style={{
             backgroundColor:
-              TESTIMONIALS[active].color === "accent-violet"
-                ? "#7c5cff"
-                : TESTIMONIALS[active].color === "accent-cyan"
-                  ? "#4dfff3"
-                  : "#ffffff",
+              glowColors[TESTIMONIALS[active].color] || "#ffffff",
           }}
         />
       </AnimatePresence>
@@ -53,6 +55,7 @@ export function Testimonials() {
               variant="outline"
               size="icon"
               onClick={prev}
+              aria-label="Previous testimonial"
               className="rounded-full w-14 h-14 border-white/5 hover:border-white/20 hover:bg-white/5"
             >
               <ChevronLeft size={24} />
@@ -61,6 +64,7 @@ export function Testimonials() {
               variant="outline"
               size="icon"
               onClick={next}
+              aria-label="Next testimonial"
               className="rounded-full w-14 h-14 border-white/5 hover:border-white/20 hover:bg-white/5"
             >
               <ChevronRight size={24} />
@@ -145,12 +149,12 @@ export function Testimonials() {
             </motion.div>
           </AnimatePresence>
 
-          {/* Navigation Dots */}
           <div className="absolute -bottom-12 left-1/2 -translate-x-1/2 flex space-x-3">
-            {TESTIMONIALS.map((_, i) => (
+            {TESTIMONIALS.map((t, i) => (
               <button
-                key={i}
+                key={t.id}
                 onClick={() => setActive(i)}
+                aria-label={`Go to testimonial ${i + 1}`}
                 className={`h-2 transition-all duration-500 rounded-full ${
                   active === i
                     ? "w-12 bg-accent-violet"

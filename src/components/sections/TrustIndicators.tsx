@@ -9,13 +9,13 @@ export function TrustIndicators() {
       <div className="container mx-auto max-w-[1200px] px-6">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
           <div className="lg:col-span-4">
-            <h3 className="text-2xl font-bold mb-8 text-foreground/80">
+            <h2 className="text-2xl font-bold mb-8 text-foreground/80 uppercase tracking-wider">
               TRUSTED BY INNOVATORS <br />
               <span className="text-accent-violet">WORLDWIDE</span>
-            </h3>
+            </h2>
             <div className="flex gap-8">
               {TECH_STATS.map((stat) => (
-                <div key={stat.label}>
+                <div key={stat.id}>
                   <div className="text-3xl font-bold text-white mb-1">
                     {stat.value}
                   </div>

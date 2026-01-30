@@ -82,12 +82,20 @@ export function ProjectCard({ project }: ProjectCardProps) {
                 target="_blank"
                 rel="noopener noreferrer"
                 className="p-3 rounded-full bg-white/5 hover:bg-white/10 transition-colors"
-                aria-label={`View ${project.title} on ${project.title === "BIZEDGE" ? "LinkedIn" : "GitHub"}`}
+                aria-label={`View ${project.title} on ${
+                  project.platform === "linkedin"
+                    ? "LinkedIn"
+                    : project.platform === "github"
+                      ? "GitHub"
+                      : "Website"
+                }`}
               >
-                {project.title === "BIZEDGE" ? (
+                {project.platform === "linkedin" ? (
                   <Linkedin size={20} className="text-foreground/60" />
-                ) : (
+                ) : project.platform === "github" ? (
                   <Github size={20} className="text-foreground/60" />
+                ) : (
+                  <ArrowUpRight size={20} className="text-foreground/60" />
                 )}
               </Link>
               <Link
