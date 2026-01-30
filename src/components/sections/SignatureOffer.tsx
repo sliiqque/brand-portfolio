@@ -8,142 +8,100 @@ import Link from "next/link";
 
 export function SignatureOffer() {
   return (
-    <section className="py-32 relative overflow-hidden">
-      {/* Background Mesh */}
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full h-[800px] bg-[radial-gradient(circle_at_center,rgba(6,182,212,0.05)_0%,transparent_70%)] -z-10" />
+    <section className="py-40 relative overflow-hidden">
+      {/* Intense "Shining" Background Glows - Inspired by Client Feedback */}
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[1200px] h-[1000px] bg-accent-cyan/20 blur-[160px] rounded-full -z-10 animate-pulse-slow" />
+      <div className="absolute top-1/4 right-1/4 w-[800px] h-[800px] bg-accent-violet/15 blur-[140px] rounded-full -z-10" />
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-white/10 blur-[120px] rounded-full -z-10 opacity-60" />
+      <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(255,255,255,0.03)_0%,transparent_100%)] -z-10" />
+      
+      {/* Background Lines */}
+      <div className="absolute top-0 left-0 w-full h-[1px] bg-gradient-to-r from-transparent via-white/5 to-transparent" />
+      <div className="absolute bottom-0 left-0 w-full h-[1px] bg-gradient-to-r from-transparent via-white/5 to-transparent" />
 
-      <div className="container mx-auto max-w-[1200px] px-6">
-        <div className="group relative bento-card p-0 overflow-hidden border border-white/5 bg-card-bg/40">
+      <div className="container mx-auto max-w-[1200px] px-6 relative z-10">
+        <div className="group relative bento-card p-0 overflow-hidden border border-white/10 bg-card-bg/40 backdrop-blur-sm">
           <div className="grid grid-cols-1 lg:grid-cols-12">
-            <div className="lg:col-span-7 p-8 md:p-16">
-              <div className="inline-flex items-center space-x-2 px-4 py-2 rounded-full border border-accent-cyan/20 bg-accent-cyan/5 text-accent-cyan text-xs font-black uppercase tracking-widest mb-10">
+            <div className="lg:col-span-7 p-8 md:p-20">
+              <div className="inline-flex items-center space-x-2 px-4 py-2 rounded-full border border-accent-cyan/20 bg-accent-cyan/5 text-accent-cyan text-xs font-black uppercase tracking-[0.2em] mb-12">
                 <Rocket size={14} />
-                <span>Premium Service</span>
+                <span>Signature Service</span>
               </div>
 
-              <h2 className="text-5xl md:text-7xl font-black mb-8 tracking-tighter leading-none">
-                WEB3 <span className="text-accent-cyan">LAUNCH</span> KIT
+              <h2 className="text-5xl md:text-8xl font-black mb-10 tracking-tighter leading-[0.9] uppercase">
+                WEB3 <span className="text-gradient-accent">LAUNCH</span> KIT
               </h2>
-              <p className="text-xl text-foreground/60 mb-12 leading-relaxed max-w-xl">
-                The ultimate end-to-end solution for founders looking to launch
-                their Web3 product in weeks, not months. Battle-tested
-                architecture and high-converting UI.
+              <p className="text-xl md:text-2xl text-foreground/60 mb-16 leading-relaxed max-w-xl font-medium italic">
+                &ldquo;Go from concept to mainnet in 4 weeks with a battle-tested technical stack.&rdquo;
               </p>
 
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-8 mb-12">
+              <div className="flex flex-wrap gap-8 mb-16">
                 {[
-                  {
-                    icon: Zap,
-                    title: "Rapid Delivery",
-                    desc: "Launch-ready in 4 weeks",
-                    color: "text-accent-cyan",
-                  },
-                  {
-                    icon: Shield,
-                    title: "Secure-First",
-                    desc: "Audit-ready code standards",
-                    color: "text-accent-cyan",
-                  },
-                  {
-                    icon: BarChart3,
-                    title: "Growth-Optimized",
-                    desc: "Conversion-focused UX",
-                    color: "text-accent-cyan",
-                  },
-                  {
-                    icon: Rocket,
-                    title: "Scalable Tech",
-                    desc: "Next.js & Solidity experts",
-                    color: "text-accent-cyan",
-                  },
+                  { icon: Zap, label: "4 Week Delivery" },
+                  { icon: Shield, label: "Audit Ready" },
+                  { icon: BarChart3, label: "Conversion Focused" },
                 ].map((item, i) => (
-                  <div
-                    key={i}
-                    className="flex items-start space-x-4 group/item"
-                  >
-                    <div
-                      className={`p-3 rounded-2xl bg-white/5 ${item.color} group-hover/item:scale-110 transition-transform duration-300`}
-                    >
-                      <item.icon size={24} />
+                  <div key={i} className="flex items-center space-x-3 group/item">
+                    <div className="w-10 h-10 rounded-xl bg-white/5 flex items-center justify-center text-accent-cyan group-hover/item:bg-accent-cyan group-hover/item:text-black transition-all duration-500 border border-white/5">
+                      <item.icon size={18} />
                     </div>
-                    <div>
-                      <h4 className="font-bold text-lg mb-1">{item.title}</h4>
-                      <p className="text-sm text-foreground/40 font-medium">
-                        {item.desc}
-                      </p>
-                    </div>
+                    <span className="text-sm font-black uppercase tracking-widest text-white/60 group-hover/item:text-white transition-colors">
+                      {item.label}
+                    </span>
                   </div>
                 ))}
               </div>
 
-              <Button
-                variant="secondary"
-                size="lg"
-                className="h-16 px-10 text-lg shadow-glow-cyan/20"
-                asChild
-              >
-                <Link href="/contact" className="flex items-center">
-                  Apply for Launch Kit
-                  <ArrowRight size={20} className="ml-2" />
-                </Link>
-              </Button>
+              <div className="flex flex-col sm:flex-row items-center gap-6">
+                <Button
+                  size="lg"
+                  className="w-full sm:w-auto h-16 px-10 text-lg group"
+                  asChild
+                >
+                  <Link href="/contact" className="flex items-center">
+                    Apply Now
+                    <div className="ml-3 w-8 h-8 rounded-full bg-white/20 flex items-center justify-center group-hover:bg-white group-hover:text-accent-violet transition-all duration-300">
+                      <ArrowRight size={18} />
+                    </div>
+                  </Link>
+                </Button>
+                <div className="flex items-center space-x-2 px-4 py-2 rounded-full border border-white/10 bg-white/5">
+                  <div className="w-2 h-2 rounded-full bg-green-500 shadow-[0_0_8px_rgba(34,197,94,0.6)]" />
+                  <span className="text-[10px] font-black uppercase tracking-widest text-white/40">Open for Q1</span>
+                </div>
+              </div>
             </div>
 
-            <div className="lg:col-span-5 relative min-h-[400px] lg:min-h-full bg-gradient-to-br from-accent-cyan/10 to-accent-violet/10 flex items-center justify-center overflow-hidden border-t lg:border-t-0 lg:border-l border-white/5">
-              {/* Creative Visual */}
-              <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1639762681485-074b7f938ba0?q=80&w=2832&auto=format&fit=crop')] bg-cover bg-center opacity-10 grayscale mix-blend-overlay" />
+            <div className="lg:col-span-5 relative min-h-[400px] lg:min-h-full flex flex-col items-center justify-center p-8 overflow-hidden border-t lg:border-t-0 lg:border-l border-white/10">
+              {/* Sidebar-style card inside bento */}
+              <div className="absolute inset-0 bg-gradient-to-br from-accent-cyan/10 via-transparent to-accent-violet/10 opacity-50" />
+              
+              <div className="relative z-10 w-full max-w-xs space-y-6">
+                <div className="bento-card p-10 bg-accent-cyan/5 border-accent-cyan/20 hover:bg-accent-cyan/10 transition-all group/stat text-center">
+                  <div className="text-[10px] font-black uppercase tracking-[0.3em] text-accent-cyan mb-4">
+                    Speed
+                  </div>
+                  <div className="text-6xl font-black text-white mb-2 group-hover/stat:scale-110 transition-transform duration-500">
+                    28
+                  </div>
+                  <div className="text-[10px] font-bold text-foreground/40 uppercase tracking-widest">
+                    Days to Launch
+                  </div>
+                </div>
+              </div>
 
-              <div className="relative z-10 w-80 h-80">
+              {/* Decorative background elements */}
+              <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-80 h-80 opacity-20">
                 <motion.div
                   animate={{ rotate: 360 }}
-                  transition={{
-                    duration: 30,
-                    repeat: Infinity,
-                    ease: "linear",
-                  }}
-                  className="absolute inset-0 border-[1px] border-accent-cyan/20 rounded-[40%] animate-pulse-slow"
+                  transition={{ duration: 30, repeat: Infinity, ease: "linear" }}
+                  className="absolute inset-0 border border-accent-cyan/30 rounded-[40%]"
                 />
                 <motion.div
                   animate={{ rotate: -360 }}
-                  transition={{
-                    duration: 25,
-                    repeat: Infinity,
-                    ease: "linear",
-                  }}
-                  className="absolute inset-8 border-[1px] border-accent-violet/20 rounded-[35%]"
+                  transition={{ duration: 25, repeat: Infinity, ease: "linear" }}
+                  className="absolute inset-8 border border-accent-violet/30 rounded-[35%]"
                 />
-                <div className="absolute inset-16 bg-background/80 backdrop-blur-2xl rounded-3xl border border-white/10 flex items-center justify-center shadow-2xl group-hover:scale-110 transition-transform duration-700">
-                  <div className="text-center">
-                    <Rocket
-                      size={64}
-                      className="text-accent-cyan mx-auto mb-4 animate-float"
-                    />
-                    <div className="text-xs font-black tracking-[0.3em] text-white/40 uppercase">
-                      System Active
-                    </div>
-                  </div>
-                </div>
-
-                {/* Floating Particles */}
-                {[...Array(6)].map((_, i) => (
-                  <motion.div
-                    key={i}
-                    animate={{
-                      y: [0, -20, 0],
-                      opacity: [0.2, 0.5, 0.2],
-                    }}
-                    transition={{
-                      duration: 3 + i,
-                      repeat: Infinity,
-                      delay: i * 0.5,
-                    }}
-                    className="absolute w-2 h-2 bg-accent-cyan rounded-full blur-[1px]"
-                    style={{
-                      top: `${Math.random() * 100}%`,
-                      left: `${Math.random() * 100}%`,
-                    }}
-                  />
-                ))}
               </div>
             </div>
           </div>

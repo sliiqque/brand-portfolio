@@ -8,9 +8,10 @@ import { ArrowRight } from "lucide-react";
 export function FinalCTA() {
   return (
     <section className="py-40 relative overflow-hidden">
-      {/* Background Effects */}
+      {/* Intense "Shining" Background Glows */}
       <div className="absolute inset-0 bg-background" />
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[1000px] h-[600px] bg-accent-violet/10 blur-[150px] rounded-full opacity-50" />
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[1200px] h-[800px] bg-accent-violet/20 blur-[160px] rounded-full -z-10 animate-pulse-slow" />
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-white/10 blur-[120px] rounded-full -z-10 opacity-50" />
       <div className="absolute bottom-0 left-0 w-full h-[1px] bg-gradient-to-r from-transparent via-white/10 to-transparent" />
 
       {/* Animated Marquee Background */}
@@ -40,8 +41,8 @@ export function FinalCTA() {
             <span className="text-gradient-accent">FUTURE</span> OF THE WEB?
           </h2>
           <p className="text-xl md:text-2xl text-foreground/60 mb-16 leading-relaxed max-w-2xl mx-auto">
-            Whether you&apos;re launching a Web3 protocol or optimizing SaaS, I&apos;m
-            here to scale your vision.
+            Whether you&apos;re launching a Web3 protocol or optimizing SaaS,
+            I&apos;m here to scale your vision.
           </p>
 
           <div className="flex flex-col sm:flex-row items-center justify-center gap-6">
