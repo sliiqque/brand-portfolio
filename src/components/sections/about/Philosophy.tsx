@@ -14,7 +14,7 @@ function PhilosophyCard({ title, desc, color, index }: PhilosophyCardProps) {
   const colorMap: Record<string, string> = {
     "accent-violet": "bg-accent-violet",
     "accent-cyan": "bg-accent-cyan",
-    white: "bg-white",
+    white: "bg-foreground",
   };
 
   return (
@@ -42,7 +42,7 @@ function PhilosophyCard({ title, desc, color, index }: PhilosophyCardProps) {
 export function Philosophy() {
   return (
     <section className="py-40 relative">
-      <div className="absolute inset-0 bg-white/[0.02]" />
+      <div className="absolute inset-0 bg-foreground/[0.02]" />
       <div className="container mx-auto max-w-[1200px] px-6 relative z-10">
         <div className="flex flex-col md:flex-row items-end justify-between gap-8 mb-20">
           <div className="max-w-2xl">

@@ -50,7 +50,7 @@ export function Services() {
                       ? "bg-accent-violet/10 text-accent-violet"
                       : service.color === "cyan"
                         ? "bg-accent-cyan/10 text-accent-cyan"
-                        : "bg-white/5 text-white"
+                        : "bg-foreground/5 text-foreground"
                   }`}
                 >
                   <service.icon size={28} />
@@ -80,14 +80,14 @@ export function Services() {
                   </ul>
                 </div>
 
-                <div className="pt-6 border-t border-white/5 flex items-center justify-between">
+                <div className="pt-6 border-t border-border-subtle flex items-center justify-between">
                   <Link
                     href="/contact"
                     className="text-sm font-bold uppercase tracking-widest hover:text-accent-violet transition-colors"
                   >
                     Learn More
                   </Link>
-                  <div className="w-8 h-8 rounded-full border border-white/10 flex items-center justify-center group-hover:bg-white group-hover:text-black transition-all">
+                  <div className="w-8 h-8 rounded-full border border-border-subtle flex items-center justify-center group-hover:bg-foreground group-hover:text-background transition-all">
                     <ArrowRight size={14} />
                   </div>
                 </div>

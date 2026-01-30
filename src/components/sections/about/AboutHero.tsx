@@ -26,7 +26,7 @@ function FloatingStat({
         ease: "easeInOut",
         delay,
       }}
-      className={`absolute ${positionClass} p-6 rounded-3xl bg-background/80 backdrop-blur-xl border border-white/10 shadow-2xl`}
+      className={`absolute ${positionClass} p-6 rounded-3xl bg-background/80 backdrop-blur-xl border border-border-subtle shadow-2xl`}
     >
       <div className={`text-3xl font-black ${colorClass}`}>{value}</div>
       <div className="text-[10px] font-bold uppercase tracking-widest text-foreground/40">
@@ -56,9 +56,8 @@ export function AboutHero() {
             </h1>
             <div className="space-y-8 text-xl md:text-2xl text-foreground/60 leading-relaxed max-w-2xl font-medium">
               <p>
-                I&apos;m SLIIQQUE, a senior Frontend and Web3 Engineer with
-                over 8 years of experience building digital products that
-                scale.
+                I&apos;m SLIIQQUE, a senior Frontend and Web3 Engineer with over
+                8 years of experience building digital products that scale.
               </p>
               <p>
                 My mission is to bridge the gap between complex technology and
@@ -74,10 +73,10 @@ export function AboutHero() {
             transition={{ duration: 1, ease: [0.16, 1, 0.3, 1] }}
             className="lg:col-span-5 relative"
           >
-            <div className="aspect-[4/5] rounded-[2rem] overflow-hidden border border-white/5 bg-white/5 relative group">
+            <div className="aspect-[4/5] rounded-[2rem] overflow-hidden border border-border-subtle bg-foreground/5 relative group">
               <div className="absolute inset-0 bg-gradient-to-br from-accent-violet/20 to-accent-cyan/20 mix-blend-overlay opacity-50" />
               <div className="absolute inset-0 flex items-center justify-center">
-                <span className="text-[200px] font-black text-white/[0.02] rotate-12 select-none">
+                <span className="text-[200px] font-black text-foreground/[0.02] rotate-12 select-none">
                   S
                 </span>
               </div>

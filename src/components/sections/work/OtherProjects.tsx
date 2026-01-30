@@ -6,7 +6,9 @@ export function OtherProjects() {
       <div className="container mx-auto max-w-[1200px] px-6">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
           <div>
-            <h2 className="text-2xl font-bold mb-4 uppercase tracking-wider">Other Projects</h2>
+            <h2 className="text-2xl font-bold mb-4 uppercase tracking-wider">
+              Other Projects
+            </h2>
             <p className="text-foreground/60 mb-8">
               I&apos;ve worked on dozens of other projects ranging from small
               MVPs to large-scale enterprise applications.
@@ -31,8 +33,10 @@ export function OtherProjects() {
             </ul>
           </div>
 
-          <div className="bg-white/5 rounded-2xl p-8 flex flex-col justify-center">
-            <h2 className="text-2xl font-bold mb-4 uppercase tracking-wider">Want to see more?</h2>
+          <div className="bg-foreground/5 rounded-2xl p-8 flex flex-col justify-center">
+            <h2 className="text-2xl font-bold mb-4 uppercase tracking-wider">
+              Want to see more?
+            </h2>
             <p className="text-foreground/60 mb-8">
               Some of my work is under NDA or for private enterprise clients. I
               can share more details during a private consultation.

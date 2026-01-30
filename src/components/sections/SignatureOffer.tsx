@@ -14,10 +14,10 @@ interface FeatureItemProps {
 function FeatureItem({ icon: Icon, label }: FeatureItemProps) {
   return (
     <div className="flex items-center space-x-3 group/item">
-      <div className="w-10 h-10 rounded-xl bg-white/5 flex items-center justify-center text-accent-cyan group-hover/item:bg-accent-cyan group-hover/item:text-black transition-all duration-500 border border-white/5">
+      <div className="w-10 h-10 rounded-xl bg-foreground/5 flex items-center justify-center text-accent-cyan group-hover/item:bg-accent-cyan group-hover/item:text-background transition-all duration-500 border border-border-subtle">
         <Icon size={18} />
       </div>
-      <span className="text-sm font-black uppercase tracking-widest text-white/60 group-hover/item:text-white transition-colors">
+      <span className="text-sm font-black uppercase tracking-widest text-foreground/60 group-hover/item:text-foreground transition-colors">
         {label}
       </span>
     </div>
@@ -38,7 +38,7 @@ function StatCard({
       <div className="text-[10px] font-black uppercase tracking-[0.3em] text-accent-cyan mb-4">
         {label}
       </div>
-      <div className="text-6xl font-black text-white mb-2 group-hover/stat:scale-110 transition-transform duration-500">
+      <div className="text-6xl font-black text-foreground mb-2 group-hover/stat:scale-110 transition-transform duration-500">
         {value}
       </div>
       <div className="text-[10px] font-bold text-foreground/40 uppercase tracking-widest">
@@ -54,15 +54,15 @@ export function SignatureOffer() {
       {/* Intense "Shining" Background Glows - Inspired by Client Feedback */}
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[1200px] h-[1000px] bg-accent-cyan/20 blur-[160px] rounded-full -z-10 animate-pulse-slow" />
       <div className="absolute top-1/4 right-1/4 w-[800px] h-[800px] bg-accent-violet/15 blur-[140px] rounded-full -z-10" />
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-white/10 blur-[120px] rounded-full -z-10 opacity-60" />
-      <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(255,255,255,0.03)_0%,transparent_100%)] -z-10" />
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-foreground/10 blur-[120px] rounded-full -z-10 opacity-60" />
+      <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,var(--grid-color)_0%,transparent_100%)] -z-10" />
 
       {/* Background Lines */}
-      <div className="absolute top-0 left-0 w-full h-[1px] bg-gradient-to-r from-transparent via-white/5 to-transparent" />
-      <div className="absolute bottom-0 left-0 w-full h-[1px] bg-gradient-to-r from-transparent via-white/5 to-transparent" />
+      <div className="absolute top-0 left-0 w-full h-[1px] bg-gradient-to-r from-transparent via-border-subtle to-transparent" />
+      <div className="absolute bottom-0 left-0 w-full h-[1px] bg-gradient-to-r from-transparent via-border-subtle to-transparent" />
 
       <div className="container mx-auto max-w-[1200px] px-6 relative z-10">
-        <div className="group relative bento-card p-0 overflow-hidden border border-white/10 bg-card-bg/40 backdrop-blur-sm">
+        <div className="group relative bento-card p-0 overflow-hidden border border-border-subtle bg-card-bg/40 backdrop-blur-sm">
           <div className="grid grid-cols-1 lg:grid-cols-12">
             <div className="lg:col-span-7 p-8 md:p-20">
               <div className="inline-flex items-center space-x-2 px-4 py-2 rounded-full border border-accent-cyan/20 bg-accent-cyan/5 text-accent-cyan text-xs font-black uppercase tracking-[0.2em] mb-12">
@@ -92,21 +92,21 @@ export function SignatureOffer() {
                 >
                   <Link href="/contact" className="flex items-center">
                     Apply Now
-                    <div className="ml-3 w-8 h-8 rounded-full bg-white/20 flex items-center justify-center group-hover:bg-white group-hover:text-accent-violet transition-all duration-300">
+                    <div className="ml-3 w-8 h-8 rounded-full bg-foreground/20 flex items-center justify-center group-hover:bg-foreground group-hover:text-background transition-all duration-300">
                       <ArrowRight size={18} />
                     </div>
                   </Link>
                 </Button>
-                <div className="flex items-center space-x-2 px-4 py-2 rounded-full border border-white/10 bg-white/5">
+                <div className="flex items-center space-x-2 px-4 py-2 rounded-full border border-border-subtle bg-foreground/5">
                   <div className="w-2 h-2 rounded-full bg-green-500 shadow-[0_0_8px_rgba(34,197,94,0.6)]" />
-                  <span className="text-[10px] font-black uppercase tracking-widest text-white/40">
-                    Open for Q1
+                  <span className="text-[10px] font-black uppercase tracking-widest text-foreground/40">
+                    Verified Status
                   </span>
                 </div>
               </div>
             </div>
 
-            <div className="lg:col-span-5 relative min-h-[400px] lg:min-h-full flex flex-col items-center justify-center p-8 overflow-hidden border-t lg:border-t-0 lg:border-l border-white/10">
+            <div className="lg:col-span-5 relative min-h-[400px] lg:min-h-full flex flex-col items-center justify-center p-8 overflow-hidden border-t lg:border-t-0 lg:border-l border-border-subtle">
               {/* Sidebar-style card inside bento */}
               <div className="absolute inset-0 bg-gradient-to-br from-accent-cyan/10 via-transparent to-accent-violet/10 opacity-50" />
 

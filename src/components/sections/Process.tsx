@@ -6,7 +6,7 @@ import { PROCESS_STEPS } from "@/lib/constants";
 export function Process() {
   return (
     <section className="py-32 bg-background relative overflow-hidden">
-      <div className="absolute top-0 left-0 w-full h-[1px] bg-gradient-to-r from-transparent via-white/5 to-transparent" />
+      <div className="absolute top-0 left-0 w-full h-[1px] bg-gradient-to-r from-transparent via-border-subtle to-transparent" />
 
       <div className="container mx-auto max-w-[1200px] px-6">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-24">
@@ -40,7 +40,7 @@ export function Process() {
                 className="group relative"
               >
                 <div className="flex items-start">
-                  <span className="text-[120px] font-black leading-none text-white/[0.03] absolute -top-12 -left-12 group-hover:text-accent-violet/10 transition-colors duration-500 select-none">
+                  <span className="text-[120px] font-black leading-none text-foreground/[0.03] absolute -top-12 -left-12 group-hover:text-accent-violet/10 transition-colors duration-500 select-none">
                     {step.number}
                   </span>
                   <div className="relative z-10 pt-4">

@@ -40,17 +40,17 @@ export function ContactContent() {
               transition={{ delay: 0.2, duration: 0.8 }}
               className="lg:col-span-5"
             >
-              <h2 className="text-3xl font-black uppercase tracking-[0.2em] mb-12 text-white/40">
+              <h2 className="text-3xl font-black uppercase tracking-[0.2em] mb-12 text-foreground/40">
                 Get in touch
               </h2>
               <div className="space-y-6">
                 {CONTACT_METHODS.map((item) => (
                   <div
                     key={item.id}
-                    className="bento-card p-8 flex items-start space-x-6 group hover:border-white/20 transition-all duration-500"
+                    className="bento-card p-8 flex items-start space-x-6 group hover:border-border-subtle transition-all duration-500"
                   >
                     <div
-                      className={`p-4 rounded-2xl bg-white/5 ${item.textColor} group-hover:scale-110 transition-transform duration-500`}
+                      className={`p-4 rounded-2xl bg-foreground/5 ${item.textColor} group-hover:scale-110 transition-transform duration-500`}
                     >
                       <item.icon size={28} />
                     </div>
@@ -106,7 +106,7 @@ export function ContactContent() {
                       <input
                         id="name"
                         type="text"
-                        className="w-full bg-white/5 border border-white/5 rounded-2xl px-6 py-4 focus:outline-none focus:border-accent-violet/50 focus:bg-white/10 transition-all text-lg"
+                        className="w-full bg-foreground/5 border border-border-subtle rounded-2xl px-6 py-4 focus:outline-none focus:border-accent-violet/50 focus:bg-foreground/10 transition-all text-lg"
                         placeholder="John Doe"
                         required
                       />
@@ -121,7 +121,7 @@ export function ContactContent() {
                       <input
                         id="email"
                         type="email"
-                        className="w-full bg-white/5 border border-white/5 rounded-2xl px-6 py-4 focus:outline-none focus:border-accent-violet/50 focus:bg-white/10 transition-all text-lg"
+                        className="w-full bg-foreground/5 border border-border-subtle rounded-2xl px-6 py-4 focus:outline-none focus:border-accent-violet/50 focus:bg-foreground/10 transition-all text-lg"
                         placeholder="john@example.com"
                         required
                       />
@@ -136,18 +136,20 @@ export function ContactContent() {
                     </label>
                     <select
                       id="service"
-                      className="w-full bg-white/5 border border-white/5 rounded-2xl px-6 py-4 focus:outline-none focus:border-accent-violet/50 focus:bg-white/10 transition-all text-lg appearance-none cursor-pointer"
+                      className="w-full bg-foreground/5 border border-border-subtle rounded-2xl px-6 py-4 focus:outline-none focus:border-accent-violet/50 focus:bg-foreground/10 transition-all text-lg appearance-none cursor-pointer"
                     >
-                      <option className="bg-background">
+                      <option className="bg-background text-foreground">
                         Frontend Engineering
                       </option>
-                      <option className="bg-background">
+                      <option className="bg-background text-foreground">
                         Web3 Development
                       </option>
-                      <option className="bg-background">
+                      <option className="bg-background text-foreground">
                         Technical Consulting
                       </option>
-                      <option className="bg-background">Web3 Launch Kit</option>
+                      <option className="bg-background text-foreground">
+                        Web3 Launch Kit
+                      </option>
                     </select>
                   </div>
                   <div className="space-y-3">
@@ -159,7 +161,7 @@ export function ContactContent() {
                     </label>
                     <textarea
                       id="message"
-                      className="w-full bg-white/5 border border-white/5 rounded-2xl px-6 py-4 focus:outline-none focus:border-accent-violet/50 focus:bg-white/10 transition-all h-48 resize-none text-lg"
+                      className="w-full bg-foreground/5 border border-border-subtle rounded-2xl px-6 py-4 focus:outline-none focus:border-accent-violet/50 focus:bg-foreground/10 transition-all h-48 resize-none text-lg"
                       placeholder="Tell me about your project..."
                       required
                     />
@@ -170,7 +172,7 @@ export function ContactContent() {
                     size="lg"
                   >
                     Send Message
-                    <div className="ml-3 w-8 h-8 rounded-full bg-white/20 flex items-center justify-center group-hover:bg-white group-hover:text-accent-violet transition-all duration-300">
+                    <div className="ml-3 w-8 h-8 rounded-full bg-foreground/20 flex items-center justify-center group-hover:bg-foreground group-hover:text-background transition-all duration-300">
                       <ArrowRight size="18" />
                     </div>
                   </Button>

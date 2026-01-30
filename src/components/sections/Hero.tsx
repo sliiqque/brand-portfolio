@@ -11,11 +11,11 @@ export function Hero() {
       {/* Intense "Shining" Background Glows */}
       <div className="absolute top-1/4 left-1/4 w-[800px] h-[800px] bg-accent-violet/20 blur-[160px] rounded-full animate-pulse-slow -z-10" />
       <div className="absolute bottom-1/4 right-1/4 w-[800px] h-[800px] bg-accent-cyan/20 blur-[160px] rounded-full animate-pulse-slow delay-1000 -z-10" />
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-white/10 blur-[140px] rounded-full -z-10 opacity-50" />
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-foreground/10 blur-[140px] rounded-full -z-10 opacity-50" />
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[1200px] h-[1200px] bg-[radial-gradient(circle_at_center,rgba(124,92,255,0.08)_0%,transparent_70%)] -z-10" />
 
       {/* Mesh Grid Overlay */}
-      <div className="absolute inset-0 bg-[linear-gradient(to_right,#ffffff05_1px,transparent_1px),linear-gradient(to_bottom,#ffffff05_1px,transparent_1px)] bg-[size:40px_40px] [mask-image:radial-gradient(ellipse_60%_50%_at_50%_50%,#000_70%,transparent_100%)] -z-10" />
+      <div className="absolute inset-0 bg-[linear-gradient(to_right,var(--grid-color)_1px,transparent_1px),linear-gradient(to_bottom,var(--grid-color)_1px,transparent_1px)] bg-[size:40px_40px] [mask-image:radial-gradient(ellipse_60%_50%_at_50%_50%,#000_70%,transparent_100%)] -z-10" />
 
       {/* Animated Marquee Background */}
       <div className="absolute top-1/2 -translate-y-1/2 left-0 w-full opacity-[0.02] pointer-events-none -rotate-12 scale-125">
@@ -39,13 +39,13 @@ export function Hero() {
             transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
           >
             <div className="flex items-center justify-center space-x-4 mb-12">
-              <div className="inline-flex items-center space-x-2 px-4 py-2 rounded-full border border-white/10 bg-white/5 text-white/60 text-xs font-black uppercase tracking-[0.2em]">
+              <div className="inline-flex items-center space-x-2 px-4 py-2 rounded-full border border-border-subtle bg-foreground/5 text-foreground/60 text-xs font-black uppercase tracking-[0.2em]">
                 <Sparkles size={14} className="text-accent-violet" />
                 <span>Available for new projects</span>
               </div>
-              <div className="hidden md:flex items-center space-x-2 px-4 py-2 rounded-full border border-white/10 bg-white/5">
+              <div className="hidden md:flex items-center space-x-2 px-4 py-2 rounded-full border border-border-subtle bg-foreground/5">
                 <div className="w-2 h-2 rounded-full bg-green-500 shadow-[0_0_8px_rgba(34,197,94,0.6)]" />
-                <span className="text-[10px] font-black uppercase tracking-widest text-white/40">
+                <span className="text-[10px] font-black uppercase tracking-widest text-foreground/40">
                   Verified Status
                 </span>
               </div>
@@ -70,14 +70,14 @@ export function Hero() {
               >
                 <Link href="/contact" className="flex items-center">
                   Start a Project
-                  <div className="ml-3 w-8 h-8 rounded-full bg-white/20 flex items-center justify-center group-hover:bg-white group-hover:text-accent-violet transition-all duration-300">
+                  <div className="ml-3 w-8 h-8 rounded-full bg-foreground/20 flex items-center justify-center group-hover:bg-foreground group-hover:text-background transition-all duration-300">
                     <ArrowRight size={18} />
                   </div>
                 </Link>
               </Button>
               <Link
                 href="/work"
-                className="text-foreground/40 hover:text-white transition-all duration-300 font-bold uppercase tracking-widest text-xs py-4 px-8 rounded-full border border-white/5 hover:border-white/20 hover:bg-white/5 flex items-center group"
+                className="text-foreground/40 hover:text-foreground transition-all duration-300 font-bold uppercase tracking-widest text-xs py-4 px-8 rounded-full border border-border-subtle hover:border-foreground/20 hover:bg-foreground/5 flex items-center group"
               >
                 See my work
                 <MoveDown

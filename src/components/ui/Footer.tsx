@@ -5,9 +5,9 @@ import { NAVIGATION, SERVICES } from "@/lib/constants";
 
 export function Footer() {
   return (
-    <footer className="relative border-t border-white/5 bg-background py-24 overflow-hidden">
+    <footer className="relative border-t border-border-subtle bg-background py-24 overflow-hidden">
       {/* Background Watermark */}
-      <div className="absolute -bottom-24 -right-24 text-[20vw] font-black text-white/[0.02] select-none pointer-events-none tracking-tighter leading-none">
+      <div className="absolute -bottom-24 -right-24 text-[20vw] font-black text-foreground/[0.02] select-none pointer-events-none tracking-tighter leading-none">
         SLIIQQUE
       </div>
 
@@ -54,7 +54,7 @@ export function Footer() {
                   href={social.href}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="w-12 h-12 rounded-2xl border border-white/5 bg-white/5 flex items-center justify-center hover:bg-accent-violet hover:border-accent-violet transition-all duration-500 group"
+                  className="w-12 h-12 rounded-2xl border border-border-subtle bg-foreground/5 flex items-center justify-center hover:bg-accent-violet hover:border-accent-violet transition-all duration-500 group"
                   aria-label={social.label}
                 >
                   <social.icon
@@ -75,7 +75,7 @@ export function Footer() {
                 <li key={item.id}>
                   <Link
                     href={item.href}
-                    className="text-foreground/60 hover:text-white transition-colors flex items-center group"
+                    className="text-foreground/60 hover:text-foreground transition-colors flex items-center group"
                   >
                     <span className="w-0 group-hover:w-4 h-[1px] bg-accent-violet mr-0 group-hover:mr-2 transition-all duration-300" />
                     {item.name}
@@ -94,7 +94,7 @@ export function Footer() {
                 <li key={service.id}>
                   <Link
                     href="/services"
-                    className="text-foreground/60 hover:text-white transition-colors flex items-center group"
+                    className="text-foreground/60 hover:text-foreground transition-colors flex items-center group"
                   >
                     <span className="w-0 group-hover:w-4 h-[1px] bg-accent-violet mr-0 group-hover:mr-2 transition-all duration-300" />
                     {service.title}
@@ -109,20 +109,20 @@ export function Footer() {
           </div>
         </div>
 
-        <div className="pt-12 border-t border-white/5 flex flex-col md:flex-row items-center justify-between text-sm text-foreground/40">
+        <div className="pt-12 border-t border-border-subtle flex flex-col md:flex-row items-center justify-between text-sm text-foreground/40">
           <p className="font-medium">
             © {new Date().getFullYear()} SLIIQQUE. DESIGNED & BUILT BY SLIIQQUE.
           </p>
           <div className="flex space-x-8 mt-6 md:mt-0">
             <Link
-              href="#"
-              className="hover:text-white transition-colors uppercase tracking-widest text-[10px] font-bold"
+              href="/privacy"
+              className="hover:text-foreground transition-colors uppercase tracking-widest text-[10px] font-bold"
             >
               Privacy Policy
             </Link>
             <Link
-              href="#"
-              className="hover:text-white transition-colors uppercase tracking-widest text-[10px] font-bold"
+              href="/terms"
+              className="hover:text-foreground transition-colors uppercase tracking-widest text-[10px] font-bold"
             >
               Terms of Service
             </Link>

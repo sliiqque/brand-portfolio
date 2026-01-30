@@ -16,7 +16,7 @@ export function TrustIndicators() {
             <div className="flex gap-8">
               {TECH_STATS.map((stat) => (
                 <div key={stat.id}>
-                  <div className="text-3xl font-bold text-white mb-1">
+                  <div className="text-3xl font-bold text-foreground mb-1">
                     {stat.value}
                   </div>
                   <div className="text-[10px] uppercase tracking-widest text-foreground/40 font-bold">
@@ -37,7 +37,7 @@ export function TrustIndicators() {
                 {[...TECH_STACK, ...TECH_STACK].map((tech, i) => (
                   <div
                     key={`${tech}-${i}`}
-                    className="px-6 py-3 rounded-2xl bg-white/5 border border-white/5 text-sm font-medium text-foreground/60 hover:text-accent-cyan hover:border-accent-cyan/30 transition-all cursor-default"
+                    className="px-6 py-3 rounded-2xl bg-foreground/5 border border-border-subtle text-sm font-medium text-foreground/60 hover:text-accent-cyan hover:border-accent-cyan/30 transition-all cursor-default"
                   >
                     {tech}
                   </div>

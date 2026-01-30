@@ -11,8 +11,8 @@ export function FinalCTA() {
       {/* Intense "Shining" Background Glows */}
       <div className="absolute inset-0 bg-background" />
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[1200px] h-[800px] bg-accent-violet/20 blur-[160px] rounded-full -z-10 animate-pulse-slow" />
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-white/10 blur-[120px] rounded-full -z-10 opacity-50" />
-      <div className="absolute bottom-0 left-0 w-full h-[1px] bg-gradient-to-r from-transparent via-white/10 to-transparent" />
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-foreground/10 blur-[120px] rounded-full -z-10 opacity-50" />
+      <div className="absolute bottom-0 left-0 w-full h-[1px] bg-gradient-to-r from-transparent via-border-subtle to-transparent" />
 
       {/* Animated Marquee Background */}
       <div className="absolute top-1/2 -translate-y-1/2 left-0 w-full opacity-[0.03] pointer-events-none -rotate-6 scale-110">
@@ -53,14 +53,14 @@ export function FinalCTA() {
             >
               <Link href="/contact" className="flex items-center">
                 Book a Consultation
-                <div className="ml-3 w-8 h-8 rounded-full bg-white/20 flex items-center justify-center group-hover:bg-white group-hover:text-accent-violet transition-all duration-300">
+                <div className="ml-3 w-8 h-8 rounded-full bg-foreground/20 flex items-center justify-center group-hover:bg-foreground group-hover:text-background transition-all duration-300">
                   <ArrowRight size={18} />
                 </div>
               </Link>
             </Button>
             <Link
               href="mailto:hello@sliiqque.com"
-              className="text-foreground/40 hover:text-white transition-all duration-300 font-bold uppercase tracking-widest text-xs py-4 px-8 rounded-full border border-white/5 hover:border-white/20 hover:bg-white/5"
+              className="text-foreground/40 hover:text-foreground transition-all duration-300 font-bold uppercase tracking-widest text-xs py-4 px-8 rounded-full border border-border-subtle hover:border-foreground/20 hover:bg-foreground/5"
             >
               hello@sliiqque.com
             </Link>

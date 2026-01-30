@@ -41,7 +41,7 @@ export function ProjectCard({ project }: ProjectCardProps) {
       viewport={{ once: true, margin: "-100px" }}
       transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
     >
-      <div className="group relative bento-card p-0 h-auto md:h-[500px] flex flex-col md:flex-row overflow-hidden border border-white/5">
+      <div className="group relative bento-card p-0 h-auto md:h-[500px] flex flex-col md:flex-row overflow-hidden border border-border-subtle">
         {/* Content Side */}
         <div className="flex-1 p-8 md:p-12 flex flex-col justify-between z-10">
           <div>
@@ -49,7 +49,7 @@ export function ProjectCard({ project }: ProjectCardProps) {
               {project.tags.map((tag) => (
                 <Badge
                   key={tag}
-                  className="bg-white/5 border-white/5 text-[10px] tracking-widest uppercase"
+                  className="bg-foreground/5 border-border-subtle text-[10px] tracking-widest uppercase"
                 >
                   {tag}
                 </Badge>
@@ -65,10 +65,10 @@ export function ProjectCard({ project }: ProjectCardProps) {
             </p>
           </div>
 
-          <div className="flex flex-wrap gap-8 items-center pt-8 border-t border-white/5">
+          <div className="flex flex-wrap gap-8 items-center pt-8 border-t border-border-subtle">
             {project.metrics.map((metric) => (
               <div key={metric}>
-                <div className="text-xl font-bold text-white">
+                <div className="text-xl font-bold text-foreground">
                   {metric.split(" ")[0]}
                 </div>
                 <div className="text-[10px] text-foreground/30 uppercase tracking-[0.2em] font-bold">
@@ -81,7 +81,7 @@ export function ProjectCard({ project }: ProjectCardProps) {
                 href={project.externalLink}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="p-3 rounded-full bg-white/5 hover:bg-white/10 transition-colors"
+                className="p-3 rounded-full bg-foreground/5 hover:bg-foreground/10 transition-colors"
                 aria-label={`View ${project.title} on ${
                   project.platform === "linkedin"
                     ? "LinkedIn"
@@ -106,7 +106,7 @@ export function ProjectCard({ project }: ProjectCardProps) {
                     ? "noopener noreferrer"
                     : undefined
                 }
-                className={`p-3 rounded-full text-white transition-all ${variant.bg} ${variant.shadow}`}
+                className={`p-3 rounded-full text-background transition-all ${variant.bg} ${variant.shadow}`}
                 aria-label={`View ${project.title} project`}
               >
                 <ArrowUpRight size={20} />
@@ -119,7 +119,7 @@ export function ProjectCard({ project }: ProjectCardProps) {
         <div
           className={`flex-1 relative ${project.image} overflow-hidden group-hover:scale-105 transition-transform duration-1000`}
         >
-          <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,rgba(255,255,255,0.05)_0%,transparent_70%)]" />
+          <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,rgba(var(--foreground),0.05)_0%,transparent_70%)]" />
           <div className="absolute inset-0 flex items-center justify-center opacity-20 group-hover:opacity-40 transition-opacity">
             <span className="text-9xl font-black tracking-tighter select-none">
               {project.title.split(" ")[0]}

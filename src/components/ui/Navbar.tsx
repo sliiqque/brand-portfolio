@@ -5,6 +5,7 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { cn } from "@/lib/utils";
 import { Button } from "./Button";
+import { ThemeToggle } from "./ThemeToggle";
 import { Menu, X } from "lucide-react";
 import {
   motion,
@@ -29,10 +30,10 @@ export function Navbar() {
     <header className="fixed top-6 left-1/2 -translate-x-1/2 z-50 w-full max-w-[800px] px-6">
       <nav
         className={cn(
-          "w-full flex items-center justify-between p-2 rounded-full border border-white/5 transition-all duration-500",
+          "w-full flex items-center justify-between p-2 rounded-full border border-border-subtle transition-all duration-500",
           scrolled
             ? "bg-background/40 backdrop-blur-xl shadow-2xl"
-            : "bg-white/5 backdrop-blur-md",
+            : "bg-foreground/5 backdrop-blur-md",
         )}
       >
         <Link
@@ -55,21 +56,22 @@ export function Navbar() {
               className={cn(
                 "px-4 py-2 text-sm font-medium rounded-full transition-all relative group",
                 pathname === item.href
-                  ? "text-white bg-white/10"
-                  : "text-white/60 hover:text-white hover:bg-white/5",
+                  ? "text-foreground bg-foreground/10"
+                  : "text-foreground/60 hover:text-foreground hover:bg-foreground/5",
               )}
             >
               {item.name}
               {pathname === item.href && (
                 <motion.div
                   layoutId="nav-pill"
-                  className="absolute inset-0 bg-white/10 rounded-full -z-10"
+                  className="absolute inset-0 bg-foreground/10 rounded-full -z-10"
                   transition={{ type: "spring", bounce: 0.2, duration: 0.6 }}
                 />
               )}
             </Link>
           ))}
-          <div className="pl-4 pr-1">
+          <div className="flex items-center space-x-2 pl-4">
+            <ThemeToggle />
             <Button
               variant="primary"
               size="sm"
@@ -82,14 +84,17 @@ export function Navbar() {
         </div>
 
         {/* Mobile Nav Toggle */}
-        <button
-          className="md:hidden p-3 text-foreground"
-          onClick={() => setIsOpen(!isOpen)}
-          aria-label={isOpen ? "Close Menu" : "Open Menu"}
-          aria-expanded={isOpen}
-        >
-          {isOpen ? <X size={20} /> : <Menu size={20} />}
-        </button>
+        <div className="md:hidden flex items-center space-x-2">
+          <ThemeToggle />
+          <button
+            className="p-3 text-foreground"
+            onClick={() => setIsOpen(!isOpen)}
+            aria-label={isOpen ? "Close Menu" : "Open Menu"}
+            aria-expanded={isOpen}
+          >
+            {isOpen ? <X size={20} /> : <Menu size={20} />}
+          </button>
+        </div>
       </nav>
 
       {/* Mobile Nav Menu */}
@@ -108,7 +113,7 @@ export function Navbar() {
                 className={cn(
                   "block px-4 py-3 text-lg font-medium rounded-2xl",
                   pathname === item.href
-                    ? "text-accent-violet bg-white/5"
+                    ? "text-accent-violet bg-foreground/5"
                     : "text-foreground/70",
                 )}
                 onClick={() => setIsOpen(false)}

@@ -15,9 +15,9 @@ export function Testimonials() {
     setActive((prev) => (prev - 1 + TESTIMONIALS.length) % TESTIMONIALS.length);
 
   const glowColors: Record<string, string> = {
-    "accent-violet": "#7c5cff",
-    "accent-cyan": "#4dfff3",
-    white: "#ffffff",
+    "accent-violet": "var(--accent-violet)",
+    "accent-cyan": "var(--accent-cyan)",
+    white: "var(--foreground)",
   };
 
   return (
@@ -33,7 +33,7 @@ export function Testimonials() {
           className={`absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] rounded-full blur-[160px] opacity-10 -z-10`}
           style={{
             backgroundColor:
-              glowColors[TESTIMONIALS[active].color] || "#ffffff",
+              glowColors[TESTIMONIALS[active].color] || "var(--foreground)",
           }}
         />
       </AnimatePresence>
@@ -56,7 +56,7 @@ export function Testimonials() {
               size="icon"
               onClick={prev}
               aria-label="Previous testimonial"
-              className="rounded-full w-14 h-14 border-white/5 hover:border-white/20 hover:bg-white/5"
+              className="rounded-full w-14 h-14 border-border-subtle hover:border-foreground/20 hover:bg-foreground/5"
             >
               <ChevronLeft size={24} />
             </Button>
@@ -65,7 +65,7 @@ export function Testimonials() {
               size="icon"
               onClick={next}
               aria-label="Next testimonial"
-              className="rounded-full w-14 h-14 border-white/5 hover:border-white/20 hover:bg-white/5"
+              className="rounded-full w-14 h-14 border-border-subtle hover:border-foreground/20 hover:bg-foreground/5"
             >
               <ChevronRight size={24} />
             </Button>
@@ -84,8 +84,8 @@ export function Testimonials() {
             >
               <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-stretch">
                 {/* Main Content Card */}
-                <div className="lg:col-span-8 bento-card p-10 md:p-16 relative overflow-hidden bg-card-bg/40 border-white/10 group">
-                  <Quote className="absolute -top-4 -right-4 text-white/5 w-64 h-64 -rotate-12 group-hover:text-white/10 transition-all duration-700" />
+                <div className="lg:col-span-8 bento-card p-10 md:p-16 relative overflow-hidden bg-card-bg/40 border-border-subtle group">
+                  <Quote className="absolute -top-4 -right-4 text-foreground/5 w-64 h-64 -rotate-12 group-hover:text-foreground/10 transition-all duration-700" />
 
                   <div className="relative z-10">
                     <div className="flex space-x-1 mb-10">
@@ -98,16 +98,16 @@ export function Testimonials() {
                       ))}
                     </div>
 
-                    <p className="text-3xl md:text-5xl font-bold leading-[1.2] tracking-tight text-white mb-12 italic">
+                    <p className="text-3xl md:text-5xl font-bold leading-[1.2] tracking-tight text-foreground mb-12 italic">
                       &ldquo;{TESTIMONIALS[active].quote}&rdquo;
                     </p>
 
                     <div className="flex items-center">
-                      <div className="w-20 h-20 rounded-3xl bg-white/5 flex items-center justify-center text-3xl font-black text-gradient-accent border border-white/10 mr-8">
+                      <div className="w-20 h-20 rounded-3xl bg-foreground/5 flex items-center justify-center text-3xl font-black text-gradient-accent border border-border-subtle mr-8">
                         {TESTIMONIALS[active].avatar}
                       </div>
                       <div>
-                        <div className="text-2xl font-black text-white uppercase tracking-tight">
+                        <div className="text-2xl font-black text-foreground uppercase tracking-tight">
                           {TESTIMONIALS[active].author}
                         </div>
                         <div className="text-sm font-black uppercase tracking-[0.2em] text-foreground/40 mt-1">
@@ -124,7 +124,7 @@ export function Testimonials() {
                     <div className="text-sm font-black uppercase tracking-[0.3em] text-accent-violet mb-6">
                       Impact Result
                     </div>
-                    <div className="text-4xl md:text-5xl font-black text-white mb-4 group-hover:scale-110 transition-transform duration-500">
+                    <div className="text-4xl md:text-5xl font-black text-foreground mb-4 group-hover:scale-110 transition-transform duration-500">
                       {TESTIMONIALS[active].stats.split(" ")[0]}
                     </div>
                     <div className="text-lg font-bold text-foreground/60 leading-tight">
@@ -132,7 +132,7 @@ export function Testimonials() {
                     </div>
                   </div>
 
-                  <div className="bento-card p-10 bg-white/5 border-white/5 hover:border-white/20 transition-all">
+                  <div className="bento-card p-10 bg-foreground/5 border-border-subtle hover:border-foreground/20 transition-all">
                     <div className="flex items-center justify-between mb-6">
                       <div className="text-sm font-black uppercase tracking-[0.2em] text-foreground/40">
                         Verified
@@ -158,7 +158,7 @@ export function Testimonials() {
                 className={`h-2 transition-all duration-500 rounded-full ${
                   active === i
                     ? "w-12 bg-accent-violet"
-                    : "w-2 bg-white/10 hover:bg-white/20"
+                    : "w-2 bg-foreground/10 hover:bg-foreground/20"
                 }`}
               />
             ))}

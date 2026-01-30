@@ -261,6 +261,6 @@ export const CONTACT_METHODS: ContactMethod[] = [
     desc: "Follow me on Twitter for Web3 and engineering insights.",
     action: "@sliiqque",
     href: "https://twitter.com/sliiqque",
-    textColor: "text-white",
+    textColor: "text-foreground",
   },
 ];

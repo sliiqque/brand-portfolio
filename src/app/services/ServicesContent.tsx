@@ -36,7 +36,7 @@ export function ServicesContent() {
       <SignatureOffer />
 
       <section className="py-40 relative overflow-hidden">
-        <div className="absolute inset-0 bg-white/[0.02]" />
+        <div className="absolute inset-0 bg-foreground/[0.02]" />
         <div className="container mx-auto max-w-[1200px] px-6 relative z-10">
           <div className="flex flex-col md:flex-row items-end justify-between gap-8 mb-24">
             <div className="max-w-2xl">
@@ -68,7 +68,7 @@ export function ServicesContent() {
                 whileInView={{ opacity: 1, scale: 1 }}
                 viewport={{ once: true }}
                 transition={{ delay: i * 0.05 }}
-                className="flex items-center p-6 border border-white/5 rounded-2xl bg-background/50 backdrop-blur-sm group hover:border-accent-cyan/30 transition-all duration-300"
+                className="flex items-center p-6 border border-border-subtle rounded-2xl bg-background/50 backdrop-blur-sm group hover:border-accent-cyan/30 transition-all duration-300"
               >
                 <div className="w-10 h-10 rounded-xl bg-accent-cyan/10 flex items-center justify-center text-accent-cyan mr-4 group-hover:scale-110 transition-transform">
                   <CheckCircle2 size={20} />
