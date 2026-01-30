@@ -21,7 +21,7 @@ export function FinalCTA() {
               key={i}
               className="text-[15vw] font-black tracking-tighter mx-8"
             >
-              LET'S BUILD THE FUTURE TOGETHER •
+              LET&apos;S BUILD THE FUTURE TOGETHER •
             </span>
           ))}
         </div>
@@ -40,7 +40,7 @@ export function FinalCTA() {
             <span className="text-gradient-accent">FUTURE</span> OF THE WEB?
           </h2>
           <p className="text-xl md:text-2xl text-foreground/60 mb-16 leading-relaxed max-w-2xl mx-auto">
-            Whether you're launching a Web3 protocol or optimizing SaaS, I'm
+            Whether you&apos;re launching a Web3 protocol or optimizing SaaS, I&apos;m
             here to scale your vision.
           </p>
 

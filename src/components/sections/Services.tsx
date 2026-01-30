@@ -1,51 +1,11 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Code2, Globe, Cpu, CheckCircle2, ArrowRight } from "lucide-react";
+import { ArrowRight } from "lucide-react";
 import Link from "next/link";
 import { Button } from "@/components/ui/Button";
 
-const services = [
-  {
-    title: "Frontend Engineering",
-    description:
-      "High-performance, pixel-perfect web applications built with Next.js and React.",
-    icon: Code2,
-    price: "$5k+",
-    features: ["Responsive Design", "Perf Optimization", "A11y Compliance"],
-    gridSpan: "md:col-span-2",
-    color: "violet",
-  },
-  {
-    title: "Web3 Development",
-    description: "Full-stack dApps and smart contract integration.",
-    icon: Globe,
-    price: "$8k+",
-    features: ["Wallet Auth", "On-chain Data", "Token Gating"],
-    gridSpan: "md:col-span-1",
-    color: "cyan",
-  },
-  {
-    title: "Technical Consulting",
-    description:
-      "Architecture reviews and product strategy for scaling startups.",
-    icon: Cpu,
-    price: "$250/hr",
-    features: ["System Design", "Code Reviews", "Tech Strategy"],
-    gridSpan: "md:col-span-1",
-    color: "white",
-  },
-  {
-    title: "Web3 Launch Kit",
-    description:
-      "The ultimate end-to-end solution for founders looking to launch their Web3 product in weeks.",
-    icon: CheckCircle2,
-    price: "Custom",
-    features: ["Full Stack", "Security Audit", "Go-to-Market UI"],
-    gridSpan: "md:col-span-2",
-    color: "cyan",
-  },
-];
+import { SERVICES } from "@/lib/constants";
 
 export function Services() {
   return (
@@ -74,7 +34,7 @@ export function Services() {
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-          {services.map((service, index) => (
+          {SERVICES.map((service, index) => (
             <motion.div
               key={service.title}
               initial={{ opacity: 0, y: 20 }}

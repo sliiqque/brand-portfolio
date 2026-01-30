@@ -5,42 +5,14 @@ import { motion, AnimatePresence } from "framer-motion";
 import { Quote, ChevronLeft, ChevronRight, Star } from "lucide-react";
 import { Button } from "@/components/ui/Button";
 
-const testimonials = [
-  {
-    quote:
-      "SLIIQQUE is a rare talent who understands both the technical complexities of Web3 and the nuances of high-converting UI design. A true partner in our success.",
-    author: "Alex Rivers",
-    role: "CEO at Nexus Labs",
-    avatar: "AR",
-    stats: "60% Conversion Increase",
-    color: "accent-violet",
-  },
-  {
-    quote:
-      "The speed and quality of delivery were exceptional. Our frontend performance increased by 60% after the migration. Highly recommended for any founder.",
-    author: "Sarah Chen",
-    role: "CTO at CloudScale",
-    avatar: "SC",
-    stats: "2.4s Faster LCP",
-    color: "accent-cyan",
-  },
-  {
-    quote:
-      "Working with SLIIQQUE felt like having a co-founder. The technical consulting alone saved us months of development time and thousands in infrastructure costs.",
-    author: "Marcus Thorne",
-    role: "Founder of EtherFlow",
-    avatar: "MT",
-    stats: "$40k Saved in OpEx",
-    color: "white",
-  },
-];
+import { TESTIMONIALS } from "@/lib/constants";
 
 export function Testimonials() {
   const [active, setActive] = useState(0);
 
-  const next = () => setActive((prev) => (prev + 1) % testimonials.length);
+  const next = () => setActive((prev) => (prev + 1) % TESTIMONIALS.length);
   const prev = () =>
-    setActive((prev) => (prev - 1 + testimonials.length) % testimonials.length);
+    setActive((prev) => (prev - 1 + TESTIMONIALS.length) % TESTIMONIALS.length);
 
   return (
     <section className="py-32 relative overflow-hidden">
@@ -55,9 +27,9 @@ export function Testimonials() {
           className={`absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] rounded-full blur-[160px] opacity-10 -z-10`}
           style={{
             backgroundColor:
-              testimonials[active].color === "accent-violet"
+              TESTIMONIALS[active].color === "accent-violet"
                 ? "#7c5cff"
-                : testimonials[active].color === "accent-cyan"
+                : TESTIMONIALS[active].color === "accent-cyan"
                   ? "#4dfff3"
                   : "#ffffff",
           }}
@@ -123,19 +95,19 @@ export function Testimonials() {
                     </div>
 
                     <p className="text-3xl md:text-5xl font-bold leading-[1.2] tracking-tight text-white mb-12 italic">
-                      "{testimonials[active].quote}"
+                      &ldquo;{TESTIMONIALS[active].quote}&rdquo;
                     </p>
 
                     <div className="flex items-center">
                       <div className="w-20 h-20 rounded-3xl bg-white/5 flex items-center justify-center text-3xl font-black text-gradient-accent border border-white/10 mr-8">
-                        {testimonials[active].avatar}
+                        {TESTIMONIALS[active].avatar}
                       </div>
                       <div>
                         <div className="text-2xl font-black text-white uppercase tracking-tight">
-                          {testimonials[active].author}
+                          {TESTIMONIALS[active].author}
                         </div>
                         <div className="text-sm font-black uppercase tracking-[0.2em] text-foreground/40 mt-1">
-                          {testimonials[active].role}
+                          {TESTIMONIALS[active].role}
                         </div>
                       </div>
                     </div>
@@ -149,10 +121,10 @@ export function Testimonials() {
                       Impact Result
                     </div>
                     <div className="text-4xl md:text-5xl font-black text-white mb-4 group-hover:scale-110 transition-transform duration-500">
-                      {testimonials[active].stats.split(" ")[0]}
+                      {TESTIMONIALS[active].stats.split(" ")[0]}
                     </div>
                     <div className="text-lg font-bold text-foreground/60 leading-tight">
-                      {testimonials[active].stats.split(" ").slice(1).join(" ")}
+                      {TESTIMONIALS[active].stats.split(" ").slice(1).join(" ")}
                     </div>
                   </div>
 
@@ -175,7 +147,7 @@ export function Testimonials() {
 
           {/* Navigation Dots */}
           <div className="absolute -bottom-12 left-1/2 -translate-x-1/2 flex space-x-3">
-            {testimonials.map((_, i) => (
+            {TESTIMONIALS.map((_, i) => (
               <button
                 key={i}
                 onClick={() => setActive(i)}

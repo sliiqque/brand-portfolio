@@ -1,6 +1,8 @@
 import Link from "next/link";
 import { Github, Twitter, Linkedin, ArrowUpRight } from "lucide-react";
 
+import { NAVIGATION, SERVICES } from "@/lib/constants";
+
 export function Footer() {
   return (
     <footer className="relative border-t border-white/5 bg-background py-24 overflow-hidden">
@@ -15,6 +17,7 @@ export function Footer() {
             <Link
               href="/"
               className="text-3xl font-black tracking-tighter mb-8 block group"
+              aria-label="SLIIQQUE Home"
             >
               SLIIQ
               <span className="text-accent-violet group-hover:text-accent-cyan transition-colors duration-500">
@@ -27,14 +30,17 @@ export function Footer() {
             </p>
             <div className="flex space-x-4">
               {[
-                { icon: Github, href: "#" },
-                { icon: Twitter, href: "#" },
-                { icon: Linkedin, href: "#" },
+                { icon: Github, href: "https://github.com/sliiique", label: "GitHub" },
+                { icon: Twitter, href: "https://twitter.com/sliiique", label: "Twitter" },
+                { icon: Linkedin, href: "https://linkedin.com/in/sliiique", label: "LinkedIn" },
               ].map((social, i) => (
                 <Link
                   key={i}
                   href={social.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="w-12 h-12 rounded-2xl border border-white/5 bg-white/5 flex items-center justify-center hover:bg-accent-violet hover:border-accent-violet transition-all duration-500 group"
+                  aria-label={social.label}
                 >
                   <social.icon
                     size={20}
@@ -50,12 +56,7 @@ export function Footer() {
               Navigation
             </h4>
             <ul className="space-y-4">
-              {[
-                { name: "Home", href: "/" },
-                { name: "Work", href: "/work" },
-                { name: "Services", href: "/services" },
-                { name: "About", href: "/about" },
-              ].map((item) => (
+              {NAVIGATION.map((item) => (
                 <li key={item.name}>
                   <Link
                     href={item.href}
@@ -74,18 +75,14 @@ export function Footer() {
               Services
             </h4>
             <ul className="space-y-4">
-              {[
-                "Frontend Engineering",
-                "Web3 Development",
-                "Technical Consulting",
-              ].map((service) => (
-                <li key={service}>
+              {SERVICES.map((service) => (
+                <li key={service.title}>
                   <Link
-                    href="#"
+                    href="/services"
                     className="text-foreground/60 hover:text-white transition-colors flex items-center group"
                   >
                     <span className="w-0 group-hover:w-4 h-[1px] bg-accent-violet mr-0 group-hover:mr-2 transition-all duration-300" />
-                    {service}
+                    {service.title}
                     <ArrowUpRight
                       size={14}
                       className="ml-1 opacity-0 group-hover:opacity-100 transition-opacity"

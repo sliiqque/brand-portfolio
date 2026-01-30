@@ -2,7 +2,9 @@
 
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/Button";
-import { Mail, MessageSquare, Calendar, ArrowRight } from "lucide-react";
+import { ArrowRight } from "lucide-react";
+
+import { CONTACT_METHODS } from "@/lib/constants";
 
 export function ContactContent() {
   return (
@@ -19,11 +21,11 @@ export function ContactContent() {
             className="max-w-4xl"
           >
             <h1 className="text-6xl md:text-9xl font-black tracking-tighter mb-10 leading-[0.8]">
-              LET'S <span className="text-gradient-accent">CONNECT</span>
+              LET&apos;S <span className="text-gradient-accent">CONNECT</span>
             </h1>
             <p className="text-xl md:text-2xl text-foreground/60 leading-relaxed max-w-2xl font-medium">
-              Have a project in mind? Let's discuss how we can work together to
-              build something exceptional.
+              Have a project in mind? Let&apos;s discuss how we can work
+              together to build something exceptional.
             </p>
           </motion.div>
         </div>
@@ -42,61 +44,40 @@ export function ContactContent() {
                 Get in touch
               </h2>
               <div className="space-y-6">
-                {[
-                  {
-                    icon: Calendar,
-                    title: "Book a Consultation",
-                    desc: "Schedule a free 30-minute discovery call to discuss your project.",
-                    action: "Schedule on Calendly",
-                    href: "#",
-                    color: "accent-violet",
-                  },
-                  {
-                    icon: Mail,
-                    title: "Email Me",
-                    desc: "For general inquiries or long-form project briefs.",
-                    action: "hello@sliiique.com",
-                    href: "mailto:hello@sliiique.com",
-                    color: "accent-cyan",
-                  },
-                  {
-                    icon: MessageSquare,
-                    title: "Social Media",
-                    desc: "Follow me on Twitter for Web3 and engineering insights.",
-                    action: "@sliiique",
-                    href: "#",
-                    color: "white",
-                  },
-                ].map(
-                  (
-                    item,
-                    i, // @ts-ignore
-                  ) => (
+                {CONTACT_METHODS.map((item, i) => (
+                  <div
+                    key={i}
+                    className="bento-card p-8 flex items-start space-x-6 group hover:border-white/20 transition-all duration-500"
+                  >
                     <div
-                      key={i}
-                      className="bento-card p-8 flex items-start space-x-6 group hover:border-white/20 transition-all duration-500"
+                      className={`p-4 rounded-2xl bg-white/5 ${item.textColor} group-hover:scale-110 transition-transform duration-500`}
                     >
-                      <div
-                        className={`p-4 rounded-2xl bg-white/5 text-${item.color} group-hover:scale-110 transition-transform duration-500`}
-                      >
-                        <item.icon size={28} />
-                      </div>
-                      <div>
-                        <h4 className="text-xl font-bold mb-2">{item.title}</h4>
-                        <p className="text-foreground/60 mb-6 leading-relaxed">
-                          {item.desc}
-                        </p>
-                        <a
-                          href={item.href}
-                          className={`inline-flex items-center font-bold text-sm uppercase tracking-widest text-${item.color} hover:opacity-70 transition-opacity`}
-                        >
-                          {item.action}
-                          <ArrowRight className="ml-2" size={14} />
-                        </a>
-                      </div>
+                      <item.icon size={28} />
                     </div>
-                  ),
-                )}
+                    <div>
+                      <h4 className="text-xl font-bold mb-2">{item.title}</h4>
+                      <p className="text-foreground/60 mb-6 leading-relaxed">
+                        {item.desc}
+                      </p>
+                      <a
+                        href={item.href}
+                        target={
+                          item.href.startsWith("http") ? "_blank" : undefined
+                        }
+                        rel={
+                          item.href.startsWith("http")
+                            ? "noopener noreferrer"
+                            : undefined
+                        }
+                        className={`inline-flex items-center font-bold text-sm uppercase tracking-widest ${item.textColor} hover:opacity-70 transition-opacity`}
+                        aria-label={item.title}
+                      >
+                        {item.action}
+                        <ArrowRight className="ml-2" size={14} />
+                      </a>
+                    </div>
+                  </div>
+                ))}
               </div>
             </motion.div>
 
@@ -116,31 +97,47 @@ export function ContactContent() {
                 >
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
                     <div className="space-y-3">
-                      <label className="text-xs font-black uppercase tracking-widest text-foreground/40">
+                      <label
+                        htmlFor="name"
+                        className="text-xs font-black uppercase tracking-widest text-foreground/40"
+                      >
                         Name
                       </label>
                       <input
+                        id="name"
                         type="text"
                         className="w-full bg-white/5 border border-white/5 rounded-2xl px-6 py-4 focus:outline-none focus:border-accent-violet/50 focus:bg-white/10 transition-all text-lg"
                         placeholder="John Doe"
+                        required
                       />
                     </div>
                     <div className="space-y-3">
-                      <label className="text-xs font-black uppercase tracking-widest text-foreground/40">
+                      <label
+                        htmlFor="email"
+                        className="text-xs font-black uppercase tracking-widest text-foreground/40"
+                      >
                         Email
                       </label>
                       <input
+                        id="email"
                         type="email"
                         className="w-full bg-white/5 border border-white/5 rounded-2xl px-6 py-4 focus:outline-none focus:border-accent-violet/50 focus:bg-white/10 transition-all text-lg"
                         placeholder="john@example.com"
+                        required
                       />
                     </div>
                   </div>
                   <div className="space-y-3">
-                    <label className="text-xs font-black uppercase tracking-widest text-foreground/40">
+                    <label
+                      htmlFor="service"
+                      className="text-xs font-black uppercase tracking-widest text-foreground/40"
+                    >
                       Service Interest
                     </label>
-                    <select className="w-full bg-white/5 border border-white/5 rounded-2xl px-6 py-4 focus:outline-none focus:border-accent-violet/50 focus:bg-white/10 transition-all text-lg appearance-none cursor-pointer">
+                    <select
+                      id="service"
+                      className="w-full bg-white/5 border border-white/5 rounded-2xl px-6 py-4 focus:outline-none focus:border-accent-violet/50 focus:bg-white/10 transition-all text-lg appearance-none cursor-pointer"
+                    >
                       <option className="bg-background">
                         Frontend Engineering
                       </option>
@@ -154,15 +151,24 @@ export function ContactContent() {
                     </select>
                   </div>
                   <div className="space-y-3">
-                    <label className="text-xs font-black uppercase tracking-widest text-foreground/40">
+                    <label
+                      htmlFor="message"
+                      className="text-xs font-black uppercase tracking-widest text-foreground/40"
+                    >
                       Message
                     </label>
                     <textarea
+                      id="message"
                       className="w-full bg-white/5 border border-white/5 rounded-2xl px-6 py-4 focus:outline-none focus:border-accent-violet/50 focus:bg-white/10 transition-all h-48 resize-none text-lg"
                       placeholder="Tell me about your project..."
+                      required
                     />
                   </div>
-                  <Button className="w-full h-16 text-lg group" size="lg">
+                  <Button
+                    type="submit"
+                    className="w-full h-16 text-lg group"
+                    size="lg"
+                  >
                     Send Message
                     <div className="ml-3 w-8 h-8 rounded-full bg-white/20 flex items-center justify-center group-hover:bg-white group-hover:text-accent-violet transition-all duration-300">
                       <ArrowRight size="18" />
