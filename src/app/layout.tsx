@@ -42,7 +42,7 @@ export const metadata: Metadata = {
     follow: true,
   },
   icons: {
-    icon: "/favicon.ico",
+    icon: "/logo.webp",
   },
   openGraph: {
     title: "SLIIQQUE — Frontend & Web3 Engineer",
