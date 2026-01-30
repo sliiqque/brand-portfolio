@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import { Github, Twitter, Linkedin, ArrowUpRight } from "lucide-react";
 
 import { NAVIGATION, SERVICES } from "@/lib/constants";
@@ -16,13 +17,23 @@ export function Footer() {
           <div className="md:col-span-5">
             <Link
               href="/"
-              className="text-3xl font-black tracking-tighter mb-8 block group"
+              className="flex items-center gap-3 mb-8 group"
               aria-label="SLIIQQUE Home"
             >
-              SLIIQ
-              <span className="text-accent-violet group-hover:text-accent-cyan transition-colors duration-500">
-                QUE
-              </span>
+              <div className="relative w-40 h-16 overflow-hidden rounded-xl">
+                <Image
+                  src="/logo.webp"
+                  alt="SLIIQQUE Logo"
+                  fill
+                  className="object-cover"
+                />
+              </div>
+              {/* <span className="text-4xl font-black tracking-tighter">
+                SLIIQ
+                <span className="text-accent-violet group-hover:text-accent-cyan transition-colors duration-500">
+                  QUE
+                </span>
+              </span> */}
             </Link>
             <p className="text-xl text-foreground/60 max-w-md mb-10 leading-relaxed">
               Engineering high-performance SaaS and Web3 interfaces that convert

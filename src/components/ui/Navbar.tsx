@@ -2,6 +2,7 @@
 
 import React, { useState } from "react";
 import Link from "next/link";
+import Image from "next/image";
 import { usePathname } from "next/navigation";
 import { cn } from "@/lib/utils";
 import { Button } from "./Button";
@@ -38,13 +39,24 @@ export function Navbar() {
       >
         <Link
           href="/"
-          className="px-6 py-2 text-xl font-bold tracking-tighter group"
+          className="px-4 py-2 flex items-center gap-2 group"
           onClick={() => setIsOpen(false)}
         >
-          SLIIQ
-          <span className="text-accent-violet group-hover:text-accent-cyan transition-colors">
-            QUE
-          </span>
+          <div className="relative w-24 h-10 overflow-hidden rounded-lg">
+            <Image
+              src="/logo.webp"
+              alt="SLIIQQUE Logo"
+              fill
+              className="object-cover"
+              priority
+            />
+          </div>
+          {/* <span className="text-2xl font-bold tracking-tighter">
+            SLIIQ
+            <span className="text-accent-violet group-hover:text-accent-cyan transition-colors">
+              QUE
+            </span>
+          </span> */}
         </Link>
 
         {/* Desktop Nav */}
